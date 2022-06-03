@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\Model\Blog;
 
+use App\Domain\Model\Blog\Author;
+use App\Domain\Model\Blog\Comment;
 use App\Domain\Model\Blog\Type\BlogId;
 use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;

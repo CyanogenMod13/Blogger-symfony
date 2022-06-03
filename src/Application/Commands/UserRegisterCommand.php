@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class UserRegisterCommand
+class UserRegisterCommand implements Command
 {
 	#[NotBlank]
 	#[Email]

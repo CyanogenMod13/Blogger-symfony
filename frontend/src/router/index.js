@@ -62,6 +62,11 @@ const router = createRouter({
 			path: '/glogin',
 			name: 'GLogin',
 			component: GLogin
+		},
+		{
+			path: '/registration',
+			name: 'Registration',
+			component: Registration
 		}
 	]
 })

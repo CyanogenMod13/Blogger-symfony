@@ -11,7 +11,7 @@ use App\Infrastructure\Persistence\Doctrine\ArticleRepository;
 use App\Infrastructure\Persistence\Flusher;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-class ArticleEditHandler
+class ArticleEditHandler implements Handler
 {
 	public function __construct(
 		private ArticleRepository $articleRepository,

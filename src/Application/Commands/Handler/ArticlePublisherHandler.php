@@ -13,7 +13,7 @@ use App\Infrastructure\Persistence\Doctrine\ArticleRepository;
 use App\Infrastructure\Persistence\Doctrine\AuthorRepository;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class ArticlePublisherHandler
+class ArticlePublisherHandler implements Handler
 {
 	public function __construct(
 		private ArticleRepository $articleRepository,

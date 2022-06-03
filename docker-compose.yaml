@@ -1,51 +1,29 @@
 version: '3'
 services:
-    nginx-api:
-        container_name: nginx-api
+    nginx:
         build:
-            context: ./docker/development/nginx/api
+            context: ./docker/nginx
         volumes:
             - ./:/var/www
         ports:
-            - "81:80"
+            - "8080:80"
         depends_on:
             - php-fpm
 
-    nginx-web:
-        container_name: nginx-web
-        build:
-            context: ./docker/development/nginx/web
+    node:
+        image: node:17-alpine
+        user: "1000:1000"
+        working_dir: /var/www/frontend
         volumes:
-            - ./frontend:/var/www
+            - ./:/var/www/
         ports:
-            - "80:80"
-        links:
-            - nginx-api
-            #- node-js
-
-    #node-js:
-    #    image: node:17-alpine
-    #    container_name: node-js
-    #    working_dir: /usr/src/
-    #    volumes:
-    #        - ./frontend:/usr/src
-    #    ports:
-    #        - "3000:3000"
-    #    command: npm install
-    #    entrypoint: npm run dev
+            - "3000:3000"
 
     php-fpm:
         build:
-            context: ./docker/development/php-fpm
+            context: ./docker/php
         volumes:
            - ./:/var/www
-
-    #php-cli:
-    #    build:
-    #        context: ./docker/development/php-cli
-    #    volumes:
-    #        - ./:/var/www
-    #        - composer:/root/.composer/cache
 
     postgres:
         image: postgres:14.1-alpine
@@ -58,27 +36,27 @@ services:
         ports:
             - "54329:5432"
 
-    #mailer:
-    #    image: mailhog/mailhog
-    #    ports:
-    #        - "8086:8025"
-    #        - "1025:1025"
+    mailer:
+        image: mailhog/mailhog
+        ports:
+            - "8086:8025"
+            - "1025:1025"
 
-    #redis:
-    #    image: redis:5.0-alpine
-    #    volumes:
-    #        - redis:/data
-    #    command:
-    #        - 'redis-server'
-    #        - '--databases 2'
-    #        - '--save 900 1'
-    #        - '--save 300 10'
-    #        - '--save 60 10000'
-    #        - '--requirepass secret'
+    redis:
+        image: redis:5.0-alpine
+        volumes:
+            - redis:/data
+        command:
+            - 'redis-server'
+            - '--databases 2'
+            - '--save 900 1'
+            - '--save 300 10'
+            - '--save 60 10000'
+            - '--requirepass secret'
 
 
 
 volumes:
     composer:
     postgres:
-#    redis:
+    redis:

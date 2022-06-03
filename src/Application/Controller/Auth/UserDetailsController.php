@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route(['/api/profile', '/profile'])]
+#[Route(['/api/profile'])]
 class UserDetailsController extends AbstractController
 {
 	public function __construct(

@@ -7,7 +7,7 @@ namespace App\Application\Commands;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Uuid;
 
-class ArticlePublishCommand
+class ArticlePublishCommand implements Command
 {
 	#[NotBlank]
 	#[Uuid]

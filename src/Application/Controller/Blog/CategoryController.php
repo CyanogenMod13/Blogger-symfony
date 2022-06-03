@@ -17,7 +17,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-#[Route(['/categories', '/api/categories'])]
+#[Route(['/api/categories'])]
 class CategoryController extends AbstractController
 {
 	public function __construct(

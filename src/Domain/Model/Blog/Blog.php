@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Model\Blog;
 
+use App\Domain\Model\Blog\Category;
 use App\Domain\Model\Blog\Type\BlogId;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

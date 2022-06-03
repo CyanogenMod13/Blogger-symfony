@@ -7,7 +7,7 @@ namespace App\Application\Commands;
 
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class CategoryCreateCommand
+class CategoryCreateCommand implements Command
 {
 	#[NotBlank]
 	public string $name;

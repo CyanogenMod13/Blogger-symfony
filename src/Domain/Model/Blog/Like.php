@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Model\Blog;
 
+use App\Domain\Model\Blog\Author;
 use App\Domain\Model\Blog\Type\BlogId;
 use Doctrine\ORM\Mapping as ORM;
 

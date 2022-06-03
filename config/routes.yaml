@@ -13,3 +13,10 @@ kernel:
 
 oauth2:
     resource: '@TrikoderOAuth2Bundle/Resources/config/routes.xml'
+
+spa:
+    path: /{path}
+    methods: GET
+    controller: App\Application\Controller\SpaController::main
+    requirements:
+        path: '.*'

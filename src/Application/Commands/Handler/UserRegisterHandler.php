@@ -17,7 +17,7 @@ use Ramsey\Uuid\Uuid;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class UserRegisterHandler
+class UserRegisterHandler implements Handler
 {
 	public function __construct(
 		private EventDispatcherInterface $eventDispatcher,

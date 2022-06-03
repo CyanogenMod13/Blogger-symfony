@@ -24,7 +24,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-#[Route(['/articles', '/api/articles'])]
+#[Route(['/api/articles'])]
 class ArticleController extends AbstractController
 {
 	public function __construct(
